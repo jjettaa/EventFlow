@@ -5,4 +5,5 @@ public class Ticket {
     private boolean isValid;
 
     public boolean validateTicket() { return false; }
+    public void generateQrCode() {}
 }
