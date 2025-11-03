@@ -1,8 +1,8 @@
-public class TicketService {
+public class OrderService {
 
-    public List<Ticket> getTicketsByEvent(int eventId) { return null; }
+    public List<Order> getOrdersByUser(int userId) { return null; }
 
-    public boolean validateTicket(int ticketId) { return false; }
+    public boolean createOrder(Order order) { return false; }
 
-    public boolean issueTicket(Ticket ticket) { return false; }
+    public boolean cancelOrder(int orderId) { return false; }
 }
