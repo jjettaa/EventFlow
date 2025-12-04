@@ -29,15 +29,14 @@ public class EventRepository {
         return null;
     }
 
- public Event save(Event event) {
-    // Assign ID only if it's a new event
-    if (event.getEventId() == 0) {
-        event.setEventId(nextId++);
-        events.add(event);
+    public Event save(Event event) {
+        // Assign ID only if it's a new event
+        if (event.getEventId() == 0) {
+            event.setEventId(nextId++);
+            events.add(event);
+        }
+        return event;
     }
-    return event;
-}
-
 
     public boolean deleteById(int id) {
         return events.removeIf(e -> e.getEventId() == id);
