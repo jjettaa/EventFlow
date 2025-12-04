@@ -1,8 +1,33 @@
+package services;
+
+import models.Ticket;
+import repositories.TicketRepository;
+import java.util.List;
+
 public class TicketService {
 
-    public List<Ticket> getTicketsByEvent(int eventId) { return null; }
+    private TicketRepository ticketRepository = TicketRepository.getInstance();
 
-    public boolean validateTicket(int ticketId) { return false; }
+    public Ticket getById(int id) {
+        return ticketRepository.findById(id);
+    }
 
-    public boolean issueTicket(Ticket ticket) { return false; }
+    public List<Ticket> getAllTickets() {
+        return ticketRepository.findAll();
+    }
+
+    public List<Ticket> getTicketsByEvent(int eventId) {
+        return ticketRepository.findByEventId(eventId);
+    }
+
+    public boolean validateTicket(int ticketId) {
+        Ticket ticket = ticketRepository.findById(ticketId);
+        return ticket != null && !ticket.isSold();
+    }
+
+    public boolean issueTicket(Ticket ticket) {
+        if (ticket == null) return false;
+        ticketRepository.save(ticket);
+        return true;
+    }
 }

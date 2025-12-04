@@ -1,3 +1,7 @@
+package models;
+
+import models.Event; // your own class
+
 public class Organizer {
 
     private int organizerId;
@@ -6,5 +10,5 @@ public class Organizer {
 
     public void createEvent(Event event) {}
     public void updateEvent(String eventId) {}
-    public Report viewSalesReport(String eventId) { return null; }
+
 }

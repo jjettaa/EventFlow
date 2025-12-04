@@ -1,10 +1,28 @@
+package services;
+
+import models.Event;
+import repositories.EventRepository;
+import java.util.List;
+
 public class EventService {
 
-    public List<Event> getAllEvents() { return null; }
+    private EventRepository eventRepository = EventRepository.getInstance();
 
-    public Event getEventById(int id) { return null; }
+    public List<Event> getAllEvents() {
+        return eventRepository.findAll();
+    }
 
-    public boolean createEvent(Event event) { return false; }
+    public Event getEventById(int id) {
+        return eventRepository.findById(id);
+    }
 
-    public boolean cancelEvent(int id) { return false; }
+    public boolean createEvent(Event event) {
+        if (event == null) return false;
+        eventRepository.save(event);
+        return true;
+    }
+
+    public boolean cancelEvent(int id) {
+        return eventRepository.deleteById(id);
+    }
 }

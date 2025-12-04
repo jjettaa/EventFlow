@@ -1,3 +1,7 @@
+package models;
+
+import java.util.Date; 
+
 public class Payment {
     private int paymentId;
     private int orderId;

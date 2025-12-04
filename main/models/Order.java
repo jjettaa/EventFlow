@@ -1,3 +1,7 @@
+package models;
+
+import java.util.Date; 
+
 public class Order {
     private int orderId;
     private int attendeeId;

@@ -1,3 +1,7 @@
+package models;
+
+import java.time.LocalDateTime;
+
 public class Notification {
     private int notificationId;
     private int recipientId;
