@@ -21,9 +21,9 @@ public class TicketService {
     }
 
     public boolean validateTicket(int ticketId) {
-        Ticket ticket = ticketRepository.findById(ticketId);
-        return ticket != null && !ticket.isSold();
-    }
+    Ticket ticket = ticketRepository.findById(ticketId);
+    return ticket != null && !ticket.isSold() && !ticket.isCancelled();
+}
 
     public boolean issueTicket(Ticket ticket) {
         if (ticket == null) return false;

@@ -31,4 +31,10 @@ public class Ticket {
 
     public boolean isSold() { return sold; }
     public void setSold(boolean sold) { this.sold = sold; }
+
+    private boolean cancelled;
+
+public boolean isCancelled() { return cancelled; }
+public void setCancelled(boolean cancelled) { this.cancelled = cancelled; }
+
 }

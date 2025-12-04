@@ -5,7 +5,7 @@ public class Organizer {
     private int organizerId;
     private String name;
     private String email;
-    private String password;  // 🔹 added
+    private String password;  
 
     public Organizer() {
     }
@@ -21,7 +21,6 @@ public class Organizer {
         this.email = email;
     }
 
-    // 🔹 new constructor with password too
     public Organizer(int organizerId, String name, String email, String password) {
         this.organizerId = organizerId;
         this.name = name;
